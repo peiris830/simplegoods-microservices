@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.simplegoods</groupId>
-    <artifactId>eureka-server</artifactId>
+    <artifactId>api-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-server</name>
-    <description>Eureka Service Discovery Server for SimpleGoods</description>
+    <name>api-gateway</name>
+    <description>API Gateway for SimpleGoods Microservices</description>
 
     <properties>
         <java.version>21</java.version>
@@ -23,10 +23,16 @@
     </properties>
 
     <dependencies>
-        <!-- Eureka Server -->
+        <!-- Spring Cloud Gateway (Reactive) -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <!-- Eureka Discovery Client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <!-- Actuator for health checks -->
