@@ -1,0 +1,28 @@
+# Auth Service configuration
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simplegoods?currentSchema=auth_schema
+    username: ${POSTGRES_USER:ecom_user}
+    password: ${POSTGRES_PASSWORD:ecom_password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: auth_schema
+
+jwt:
+  secret: ${JWT_SECRET:DEV-ONLY-SECRET-CHANGE-IN-PRODUCTION-min-32-chars}
+  expiration: 900000
+  refresh-expiration: 604800000
