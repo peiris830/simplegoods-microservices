@@ -1,0 +1,13 @@
+# Product Service configuration
+
+server:
+  port: 8082
+
+spring:
+  application:
+    name: product-service
+  
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/simplegoods_products}
+      database: simplegoods_products
